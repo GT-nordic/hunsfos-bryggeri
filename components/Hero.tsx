@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', padding: '0 4rem 5rem' }}>
+    <section className="hero" id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '6rem 4rem 4rem' }}>
       <div className="hero-bg" />
       <div className="hero-grid" />
       <div className="steam" />
