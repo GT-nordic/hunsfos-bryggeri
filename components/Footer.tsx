@@ -1,16 +1,13 @@
-import Image from 'next/image';
-
 export default function Footer() {
   return (
     <footer>
       <div className="footer-top">
         <div>
-          <Image
-            src="/images/logo.jpg"
-            alt="Hunsfos Bryggeri"
-            width={220}
-            height={80}
-            className="footer-logo-img"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.png"
+            alt="Hunsfos Bryggeri & Destilleri"
+            style={{ height: '70px', width: 'auto', filter: 'invert(1)', opacity: 0.7, marginBottom: '1rem' }}
           />
           <p className="footer-tagline">
             Håndbrygget øl fra hjertet av Vennesla —

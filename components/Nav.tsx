@@ -18,18 +18,10 @@ export default function Nav() {
       <a href="#" className="nav-logo">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/logo.jpg"
-          alt=""
-          style={{ mixBlendMode: 'screen', height: '44px', width: 'auto', marginRight: '0.75rem' }}
+          src="/images/logo.png"
+          alt="Hunsfos Bryggeri & Destilleri"
+          style={{ height: '52px', width: 'auto', filter: 'invert(1)' }}
         />
-        <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
-          <span style={{ fontFamily: 'var(--font-bebas), "Bebas Neue", sans-serif', fontSize: '1.4rem', letterSpacing: '0.08em', color: 'var(--cream)' }}>
-            Hunsfos
-          </span>
-          <span style={{ fontFamily: 'var(--font-dm-mono), "DM Mono", monospace', fontSize: '0.48rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--copper)' }}>
-            Bryggeri &amp; Destilleri
-          </span>
-        </span>
       </a>
 
       <ul className="nav-links">
