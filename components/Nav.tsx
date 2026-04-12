@@ -20,7 +20,7 @@ export default function Nav() {
         <img
           src="/logo.jpg"
           alt=""
-          style={{ height: 44, width: 'auto', filter: 'brightness(0) invert(1)', marginRight: '0.75rem' }}
+          style={{ height: 44, width: 'auto', mixBlendMode: 'screen', marginRight: '0.75rem' }}
         />
         <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
           <span style={{ fontFamily: 'var(--font-bebas), "Bebas Neue", sans-serif', fontSize: '1.4rem', letterSpacing: '0.08em', color: 'var(--cream)' }}>
