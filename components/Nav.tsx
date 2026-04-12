@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null);
@@ -9,9 +8,7 @@ export default function Nav() {
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    };
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -19,15 +16,22 @@ export default function Nav() {
   return (
     <nav id="mainNav" ref={navRef}>
       <a href="#" className="nav-logo">
-        <Image
-          src="/images/logo.jpg"
-          alt="Hunsfos Bryggeri"
-          width={160}
-          height={56}
-          className="nav-logo-img"
-          priority
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo.jpg"
+          alt=""
+          style={{ height: 44, width: 'auto', filter: 'brightness(0) invert(1)', marginRight: '0.75rem' }}
         />
+        <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+          <span style={{ fontFamily: 'var(--font-bebas), "Bebas Neue", sans-serif', fontSize: '1.4rem', letterSpacing: '0.08em', color: 'var(--cream)' }}>
+            Hunsfos
+          </span>
+          <span style={{ fontFamily: 'var(--font-dm-mono), "DM Mono", monospace', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)' }}>
+            Bryggeri &amp; Destilleri
+          </span>
+        </span>
       </a>
+
       <ul className="nav-links">
         <li><a href="#om-oss">Om oss</a></li>
         <li><a href="#produkter">Produkter</a></li>
@@ -36,6 +40,7 @@ export default function Nav() {
         <li><a href="#smuget">Smuget</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
+
       <a href="https://hunsfos-bryggeri.no/olsmaking" className="nav-cta">
         Book smaking
       </a>

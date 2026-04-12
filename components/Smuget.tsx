@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const features = [
   {
     title: 'Privat reservasjon',
@@ -48,6 +46,8 @@ export default function Smuget() {
   return (
     <section className="smuget-section" id="smuget">
       <div className="smuget-inner">
+
+        {/* LEFT: text */}
         <div className="smuget-text">
           <p className="section-label reveal">Privat lokale</p>
           <h2 className="reveal reveal-delay-1">Smuget</h2>
@@ -74,31 +74,34 @@ export default function Smuget() {
           </a>
         </div>
 
+        {/* RIGHT: 2-column photo grid */}
         <div className="smuget-visual reveal reveal-delay-1">
           <div className="smuget-photos">
+
             <div className="smuget-photo-main">
-              <Image
-                src="/images/smuget-main.jpg"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/smuget-main.jpg"
                 alt="Smuget — privat lokale"
-                fill
-                sizes="(max-width: 900px) 50vw, 25vw"
-                style={{ objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
               />
               <div className="photo-overlay" />
             </div>
+
             <div className="smuget-photo-side">
-              <Image
-                src="/images/smuget-side.jpg"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/smuget-side.jpg"
                 alt="Smuget interiør"
-                fill
-                sizes="(max-width: 900px) 50vw, 25vw"
-                style={{ objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
               />
               <div className="photo-overlay" />
               <div className="smuget-badge">SMUGET</div>
             </div>
+
           </div>
         </div>
+
       </div>
     </section>
   );

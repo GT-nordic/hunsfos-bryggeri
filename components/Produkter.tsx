@@ -1,100 +1,63 @@
 const products = [
   {
-    id: 'ipa',
-    cardClass: 'card-ipa',
-    abv: '6.5% ABV',
-    style: 'India Pale Ale',
-    name: 'Hunsfos IPA',
-    desc: 'Frisk og humlerik med sitrus­preg',
-    icon: (
-      <svg width="80" height="120" viewBox="0 0 80 120" fill="none">
-        <path d="M20 30 Q20 20 40 20 Q60 20 60 30 L65 100 Q65 110 40 110 Q15 110 15 100Z" fill="none" stroke="#c4702a" strokeWidth="1.5" opacity="0.6"/>
-        <path d="M22 55 Q40 48 58 55" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-        <path d="M22 70 Q40 63 58 70" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-        <path d="M22 85 Q40 78 58 85" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-      </svg>
-    ),
+    id: 'liverbirds',
+    abv: '4.6% ABV',
+    style: 'Lager',
+    name: 'Liverbirds',
+    desc: 'Klassisk lager med frisk karakter',
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/YNWA_Fat%C3%B8l_033L_HB_1-0622513.png?format=webp',
   },
   {
-    id: 'porter',
-    cardClass: 'card-porter',
-    abv: '5.2% ABV',
-    style: 'Robust Porter',
-    name: 'Mølleporter',
-    desc: 'Mørk og fyldig med sjokolade­noter',
-    icon: (
-      <svg width="80" height="120" viewBox="0 0 80 120" fill="none">
-        <path d="M20 30 Q20 20 40 20 Q60 20 60 30 L65 90 Q65 100 40 100 Q15 100 15 90Z" fill="none" stroke="#c4702a" strokeWidth="1.5"/>
-        <line x1="30" y1="50" x2="50" y2="50" stroke="#c4702a" strokeWidth="1" opacity="0.4"/>
-        <line x1="28" y1="65" x2="52" y2="65" stroke="#c4702a" strokeWidth="1" opacity="0.4"/>
-      </svg>
-    ),
+    id: '6times',
+    abv: '4.6% ABV',
+    style: 'Yankee Pale Ale',
+    name: '6 Times',
+    desc: 'Lys og fruktig med amerikansk humlepreg',
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/6_TIMES_LIVERPOOL_Yankee_Pale_Ale_033L_HB-0622508.png?format=webp',
   },
   {
-    id: 'pale',
-    cardClass: 'card-pale',
-    abv: '4.8% ABV',
-    style: 'American Pale Ale',
-    name: 'Venndøla Pale',
+    id: 'moipa',
+    abv: '4.7% ABV',
+    style: 'IPA',
+    name: 'MoIPA',
+    desc: 'Humlerik og aromatisk med sitrusnyanser',
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/MoiPa_033L_HB-1392469.png?format=webp',
+  },
+  {
+    id: 'pm4',
+    abv: '4.6% ABV',
+    style: 'Yankee Pale Ale',
+    name: 'PM4',
     desc: 'Balansert og tilgjengelig — et perfekt hverdagsøl',
-    icon: (
-      <svg width="80" height="120" viewBox="0 0 80 120" fill="none">
-        <path d="M25 30 Q25 18 40 18 Q55 18 55 30 L58 95 Q58 105 40 105 Q22 105 22 95Z" fill="none" stroke="#c4702a" strokeWidth="1.5" opacity="0.6"/>
-        <path d="M25 55 Q40 50 55 55" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-        <path d="M25 70 Q40 65 55 70" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-      </svg>
-    ),
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/PM4_Yankee_Pale_Ale_033L-0622510.png?format=webp',
   },
   {
-    id: 'wheat',
-    cardClass: 'card-wheat',
-    abv: '5.0% ABV',
-    style: 'Hveteøl',
-    name: 'Fabrikkens Weizen',
-    desc: 'Fruktig og cremet med bananpreg',
-    icon: (
-      <svg width="80" height="120" viewBox="0 0 80 120" fill="none">
-        <path d="M35 95 L35 30" stroke="#c4702a" strokeWidth="1.5" opacity="0.5"/>
-        <ellipse cx="35" cy="30" rx="12" ry="16" fill="none" stroke="#c4702a" strokeWidth="1.2" opacity="0.5"/>
-        <ellipse cx="35" cy="52" rx="10" ry="12" fill="none" stroke="#c4702a" strokeWidth="1" opacity="0.4"/>
-      </svg>
-    ),
-  },
-  {
-    id: 'lager',
-    cardClass: 'card-lager',
-    abv: '4.5% ABV',
-    style: 'Håndbrygget Lager',
-    name: 'Hunsfos Lager',
+    id: 'fatol',
+    abv: '4.6% ABV',
+    style: 'Lys Lager',
+    name: 'Fatøl',
     desc: 'Ren og forfriskende — klassisk norsk',
-    icon: (
-      <svg width="80" height="120" viewBox="0 0 80 120" fill="none">
-        <path d="M22 25 Q40 18 58 25 L62 95 Q62 108 40 108 Q18 108 18 95Z" fill="none" stroke="#c4702a" strokeWidth="1.5" opacity="0.5"/>
-        <path d="M22 55 Q40 48 58 55" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-        <path d="M22 70 Q40 63 58 70" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-        <path d="M22 85 Q40 78 58 85" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-      </svg>
-    ),
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/Fat%C3%B8l_Lys_lager_033L-0622509.png?format=webp',
   },
   {
-    id: 'seasonal',
-    cardClass: 'card-seasonal',
-    abv: 'Varierer',
-    style: 'Sesongsøl',
-    name: 'Årets Sesong',
-    desc: 'Begrenset opplag — hvert årstid sin karakter',
-    icon: (
-      <svg width="80" height="120" viewBox="0 0 80 120" fill="none">
-        <circle cx="40" cy="60" r="22" fill="none" stroke="#c4702a" strokeWidth="1.2" opacity="0.5"/>
-        <circle cx="40" cy="60" r="12" fill="none" stroke="#c4702a" strokeWidth="0.8" opacity="0.4"/>
-        <line x1="40" y1="30" x2="40" y2="20" stroke="#c4702a" strokeWidth="1" opacity="0.5"/>
-        <line x1="40" y1="90" x2="40" y2="100" stroke="#c4702a" strokeWidth="1" opacity="0.5"/>
-        <line x1="10" y1="60" x2="20" y2="60" stroke="#c4702a" strokeWidth="1" opacity="0.5"/>
-        <line x1="60" y1="60" x2="70" y2="60" stroke="#c4702a" strokeWidth="1" opacity="0.5"/>
-      </svg>
-    ),
+    id: 'direktporter',
+    abv: '6.5% ABV',
+    style: 'Sterk · Porter',
+    name: 'Direktørens Porter',
+    desc: 'Mørk og fyldig med sjokoladenyanser',
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/STERK_%C3%98L/Direkt%C3%B8rens_Porter_033L-0798548.png?format=webp',
+  },
+  {
+    id: 'direktipa',
+    abv: '7.2% ABV',
+    style: 'Sterk · IPA',
+    name: 'Direktørens Presisjons IPA',
+    desc: 'Kraftig og kompleks med intens humlearoma',
+    img: 'https://content.app-sources.com/s/31183878108398971/uploads/STERK_%C3%98L/Direkt%C3%B8rens_Presisjons_IPA_033L-0798548.png?format=webp',
   },
 ];
+
+const delays = ['', ' reveal-delay-1', ' reveal-delay-2'];
 
 export default function Produkter() {
   return (
@@ -111,12 +74,20 @@ export default function Produkter() {
 
       <div className="produkter-grid">
         {products.map((p, i) => (
-          <div
-            key={p.id}
-            className={`produkt-card ${p.cardClass} reveal${i % 3 === 1 ? ' reveal-delay-1' : i % 3 === 2 ? ' reveal-delay-2' : ''}`}
-          >
-            <div className="card-bg" />
-            <div className="card-icon">{p.icon}</div>
+          <div key={p.id} className={`produkt-card reveal${delays[i % 3]}`}>
+            {/* Subtle dark gradient background */}
+            <div className="card-bg" style={{ background: 'linear-gradient(160deg, #1e160f 0%, #15100c 100%)' }} />
+
+            {/* Bottle image */}
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem 1.5rem 5rem' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={p.img}
+                alt={p.name}
+                style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.5))' }}
+              />
+            </div>
+
             <div className="card-abv">{p.abv}</div>
             <div className="card-content">
               <div className="card-style">{p.style}</div>

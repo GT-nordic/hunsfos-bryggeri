@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 export default function Hero() {
   const yearRef = useRef<HTMLDivElement>(null);
@@ -17,23 +16,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" style={{ alignItems: 'center', padding: '0 4rem' }}>
       <div className="hero-bg" />
       <div className="hero-grid" />
       <div className="steam" />
       <div className="hero-year" ref={yearRef}>2016</div>
 
       <div className="hero-content">
-        <div className="hero-logo-wrap">
-          <Image
-            src="/images/logo.jpg"
-            alt="Hunsfos Bryggeri"
-            width={280}
-            height={100}
-            className="hero-logo-img"
-            priority
-          />
-        </div>
         <p className="hero-eyebrow">Håndbrygget øl · Vennesla, Norge</p>
         <h1 className="hero-title">
           Brygget med<br /><em>sjel</em>
