@@ -20,7 +20,7 @@ export default function Nav() {
         <img
           src="/logo.jpg"
           alt=""
-          style={{ height: 44, width: 'auto', mixBlendMode: 'screen', marginRight: '0.75rem' }}
+          style={{ mixBlendMode: 'screen', height: '44px', width: 'auto', marginRight: '0.75rem' }}
         />
         <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
           <span style={{ fontFamily: 'var(--font-bebas), "Bebas Neue", sans-serif', fontSize: '1.4rem', letterSpacing: '0.08em', color: 'var(--cream)' }}>
@@ -41,7 +41,7 @@ export default function Nav() {
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
 
-      <a href="https://hunsfos-bryggeri.no/olsmaking" className="nav-cta">
+      <a href="https://hunsfos-bryggeri.no/olsmaking" className="nav-cta hidden md:block">
         Book smaking
       </a>
     </nav>

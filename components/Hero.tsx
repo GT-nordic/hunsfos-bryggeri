@@ -16,13 +16,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero" style={{ alignItems: 'flex-end', padding: '0 4rem 5rem' }}>
+    <section className="hero" id="hero" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
       <div className="hero-bg" />
       <div className="hero-grid" />
       <div className="steam" />
       <div className="hero-year" ref={yearRef}>2016</div>
 
-      <div className="hero-content">
+      <div className="hero-content" style={{ maxWidth: '100%', padding: '0 1.5rem' }}>
         <div style={{ marginBottom: '2rem' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
