@@ -16,18 +16,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero" style={{ paddingTop: '8rem', paddingBottom: '5rem', alignItems: 'flex-end' }}>
+    <section className="hero" id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', padding: '0 4rem 5rem' }}>
       <div className="hero-bg" />
       <div className="hero-grid" />
       <div className="steam" />
       <div className="hero-year" ref={yearRef}>2016</div>
 
-      <div className="hero-content" style={{ maxWidth: '100%', padding: '0 1.5rem' }}>
+      <div className="hero-content" style={{ maxWidth: '100%' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/logo.png"
           alt="Hunsfos Bryggeri & Destilleri"
-          style={{ filter: 'invert(1)', mixBlendMode: 'screen', height: '110px', width: 'auto', marginBottom: '1.5rem' }}
+          style={{ height: '100px', width: 'auto', marginBottom: '1.5rem' }}
         />
         <p className="hero-eyebrow">Håndbrygget øl · Vennesla, Norge</p>
         <h1 className="hero-title">

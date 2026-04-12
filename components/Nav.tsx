@@ -20,7 +20,7 @@ export default function Nav() {
         <img
           src="/images/logo.png"
           alt="Hunsfos Bryggeri & Destilleri"
-          style={{ filter: 'invert(1)', mixBlendMode: 'screen', height: '52px', width: 'auto' }}
+          style={{ height: '52px', width: 'auto' }}
         />
       </a>
 
