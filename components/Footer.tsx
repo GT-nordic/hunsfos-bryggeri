@@ -7,7 +7,7 @@ export default function Footer() {
           <img
             src="/images/logo.png"
             alt="Hunsfos Bryggeri & Destilleri"
-            style={{ height: '70px', width: 'auto', filter: 'invert(1)', opacity: 0.7, marginBottom: '1rem' }}
+            style={{ filter: 'invert(1)', mixBlendMode: 'screen', height: '70px', width: 'auto', opacity: 0.7, marginBottom: '1rem' }}
           />
           <p className="footer-tagline">
             Håndbrygget øl fra hjertet av Vennesla —

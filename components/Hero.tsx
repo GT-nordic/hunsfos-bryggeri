@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
+    <section className="hero" id="hero" style={{ paddingTop: '8rem', paddingBottom: '5rem', alignItems: 'flex-end' }}>
       <div className="hero-bg" />
       <div className="hero-grid" />
       <div className="steam" />
@@ -27,7 +27,7 @@ export default function Hero() {
         <img
           src="/images/logo.png"
           alt="Hunsfos Bryggeri & Destilleri"
-          style={{ height: '110px', width: 'auto', filter: 'invert(1)', marginBottom: '1.5rem' }}
+          style={{ filter: 'invert(1)', mixBlendMode: 'screen', height: '110px', width: 'auto', marginBottom: '1.5rem' }}
         />
         <p className="hero-eyebrow">Håndbrygget øl · Vennesla, Norge</p>
         <h1 className="hero-title">
