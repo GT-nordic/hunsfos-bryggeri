@@ -26,7 +26,7 @@ export default function Nav() {
           <span style={{ fontFamily: 'var(--font-bebas), "Bebas Neue", sans-serif', fontSize: '1.4rem', letterSpacing: '0.08em', color: 'var(--cream)' }}>
             Hunsfos
           </span>
-          <span style={{ fontFamily: 'var(--font-dm-mono), "DM Mono", monospace', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)' }}>
+          <span style={{ fontFamily: 'var(--font-dm-mono), "DM Mono", monospace', fontSize: '0.48rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--copper)' }}>
             Bryggeri &amp; Destilleri
           </span>
         </span>

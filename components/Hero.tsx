@@ -23,6 +23,14 @@ export default function Hero() {
       <div className="hero-year" ref={yearRef}>2016</div>
 
       <div className="hero-content">
+        <div style={{ marginBottom: '2rem' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.jpg"
+            alt="Hunsfos Bryggeri"
+            style={{ height: 110, width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.92 }}
+          />
+        </div>
         <p className="hero-eyebrow">Håndbrygget øl · Vennesla, Norge</p>
         <h1 className="hero-title">
           Brygget med<br /><em>sjel</em>
