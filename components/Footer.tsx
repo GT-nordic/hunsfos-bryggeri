@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-col-title">Opplev</div>
           <ul>
-            <li><a href="https://hunsfos-bryggeri.no/olsmaking">Ølsmaking</a></li>
+            <li><a href="mailto:post@hunsfos-bryggeri.no">Ølsmaking</a></li>
             <li><a href="#smuget">Smuget</a></li>
             <li><a href="https://hunsfos-bryggeri.no/eventer">Eventer</a></li>
             <li><a href="https://hunsfos-bryggeri.no/faq">FAQ</a></li>
@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="footer-col-title">Info</div>
           <ul>
             <li><a href="https://hunsfos-bryggeri.no/om-oss">Om oss</a></li>
-            <li><a href="https://hunsfos-bryggeri.no/kontakt-oss">Kontakt oss</a></li>
+            <li><a href="mailto:post@hunsfos-bryggeri.no">Kontakt oss</a></li>
             <li><a href="https://hunsfos-bryggeri.no/signin">Logg inn</a></li>
           </ul>
         </div>
