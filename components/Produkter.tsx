@@ -26,7 +26,7 @@ const products = [
   {
     id: 'pm4',
     abv: '4.6% ABV',
-    style: '/ som de fleste kjenner som PM4 Yankee Pale Ale',
+    style: 'Som de fleste kjenner som PM4 Yankee Pale',
     name: 'IPA',
     desc: 'Balansert og tilgjengelig — et perfekt hverdagsøl',
     img: '/images/ipa-pm4.png',
