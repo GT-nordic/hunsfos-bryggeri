@@ -38,7 +38,7 @@ export default function Location() {
           </div>
           <div className="hour-row">
             <span className="day">Kontakt</span>
-            <span>hunsfos-bryggeri.no</span>
+            <a href="mailto:post@hunsfos-bryggeri.no">post@hunsfos-bryggeri.no</a>
           </div>
         </div>
 

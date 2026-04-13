@@ -26,17 +26,17 @@ const products = [
   {
     id: 'pm4',
     abv: '4.6% ABV',
-    style: 'Yankee Pale Ale',
-    name: 'PM4',
+    style: '/ som de fleste kjenner som PM4 Yankee Pale Ale',
+    name: 'IPA',
     desc: 'Balansert og tilgjengelig — et perfekt hverdagsøl',
-    img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/PM4_Yankee_Pale_Ale_033L-0622510.png?format=webp',
+    img: '/images/ipa-pm4.png',
   },
   {
     id: 'fatol',
     abv: '4.6% ABV',
     style: 'Lys Lager',
     name: 'Fatøl',
-    desc: 'Ren og forfriskende — klassisk norsk',
+    desc: 'En lys, ren fatøl som mange kaller festival pilsner',
     img: 'https://content.app-sources.com/s/31183878108398971/uploads/%C3%98L/Fat%C3%B8l_Lys_lager_033L-0622509.png?format=webp',
   },
   {
