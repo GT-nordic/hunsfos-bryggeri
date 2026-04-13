@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Ticker from '@/components/Ticker';
+import NordicRiverBanner from '@/components/NordicRiverBanner';
 import About from '@/components/About';
 import Produkter from '@/components/Produkter';
 import Smaking from '@/components/Smaking';
@@ -17,6 +18,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Ticker />
+      <NordicRiverBanner />
       <About />
       <Produkter />
       <Smaking />

@@ -852,6 +852,73 @@ footer {
   padding: 5rem 4rem 3rem;
 }
 
+/* ── Nordic River crosslink banner ── */
+.nordic-river-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--deep);
+  border-top: 1px solid rgba(184,149,90,0.15);
+  border-bottom: 1px solid rgba(184,149,90,0.15);
+  padding: 2.5rem 4rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+.nordic-river-banner:hover {
+  background: #231a10;
+}
+.nordic-river-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.nordic-river-label {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+.nordic-river-name {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  line-height: 1;
+}
+.nordic-river-sub {
+  font-family: var(--font-lora), Lora, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.nordic-river-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+.nordic-river-url {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--copper);
+}
+@media (max-width: 600px) {
+  .nordic-river-banner {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .nordic-river-banner-right {
+    align-self: flex-end;
+  }
+}
+
 .footer-top {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
