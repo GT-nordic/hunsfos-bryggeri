@@ -3,12 +3,12 @@ export default function About() {
     <div className="about" id="om-oss">
       <div className="about-visual reveal">
         <div className="about-frame" />
-        <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', height: '100%', minHeight: '600px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/brewery-dusk.png"
             alt="Hunsfos Bryggeri"
-            style={{ width: '100%', height: '100%', minHeight: '500px', objectFit: 'cover', objectPosition: 'center' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', position: 'absolute', inset: 0 }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,10,7,0.5) 0%, transparent 60%)' }} />
         </div>
