@@ -16,11 +16,28 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-          <div className="footer-col-title">Utforsk</div>
+          <div className="footer-col-title">Øl</div>
           <ul>
-            <li><a href="https://hunsfos-bryggeri.no/produkter">Produkter</a></li>
-            <li><a href="https://nordic-river.com" target="_blank" rel="noopener noreferrer">Nordic River</a></li>
-            <li><a href="https://hunsfos-bryggeri.no/utsalg">Utsalg</a></li>
+            <li><a href="#produkter">Liverbirds</a></li>
+            <li><a href="#produkter">6 Times</a></li>
+            <li><a href="#produkter">MoIPA</a></li>
+            <li><a href="#produkter">PM4</a></li>
+            <li><a href="#produkter">Fatøl</a></li>
+            <li><a href="#produkter">Direktørens Porter</a></li>
+            <li><a href="#produkter">Direktørens Presisjons IPA</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <div className="footer-col-title">Nordic River</div>
+          <ul>
+            <li><a href="https://nordic-river.com/products/no1-citrus-gin" target="_blank" rel="noopener noreferrer">No.1 Citrus Gin</a></li>
+            <li><a href="https://nordic-river.com/products/no2-classic-gin" target="_blank" rel="noopener noreferrer">No.2 Classic Gin</a></li>
+            <li><a href="https://nordic-river.com/products/no3-raspberry-gin" target="_blank" rel="noopener noreferrer">No.3 Raspberry Gin</a></li>
+            <li><a href="https://nordic-river.com/products/no4-blackberry-gin" target="_blank" rel="noopener noreferrer">No.4 Blackberry Gin</a></li>
+            <li><a href="https://nordic-river.com/products/no5-bergamot-gin" target="_blank" rel="noopener noreferrer">No.5 Bergamot Gin</a></li>
+            <li><a href="https://nordic-river.com/products/premium-vodka" target="_blank" rel="noopener noreferrer">Craft Vodka</a></li>
+            <li><a href="https://nordic-river.com/products/akevitt" target="_blank" rel="noopener noreferrer">Akevitt</a></li>
           </ul>
         </div>
 
