@@ -10,7 +10,16 @@ const bubbles = [
 export default function Smaking() {
   return (
     <div className="smaking-section" id="smaking">
-      <div className="smaking-visual">
+      <div className="smaking-visual" style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* Building photo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/smaking-building.jpg"
+          alt="Hunsfos Bryggeri — nattbilde"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', zIndex: 0 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,10,7,0.7) 0%, rgba(15,10,7,0.2) 100%)', zIndex: 1 }} />
+
         {bubbles.map((b, i) => (
           <div
             key={i}
@@ -21,12 +30,14 @@ export default function Smaking() {
               left: b.left,
               animationDuration: b.duration,
               animationDelay: b.delay,
+              position: 'relative',
+              zIndex: 2,
             }}
           />
         ))}
 
         {/* Beer glass illustration */}
-        <svg width="200" height="260" viewBox="0 0 200 260" fill="none" opacity="0.5">
+        <svg width="200" height="260" viewBox="0 0 200 260" fill="none" opacity="0.3" style={{ position: 'relative', zIndex: 2 }}>
           <path d="M55 30 L45 220 L155 220 L145 30Z" fill="none" stroke="#c4702a" strokeWidth="1.5" opacity="0.5"/>
           <path d="M60 80 L52 220 L148 220 L140 80Z" fill="rgba(212,165,64,0.08)"/>
           <path d="M50 30 Q100 20 150 30 Q152 50 148 55 Q100 45 52 55 Q48 50 50 30Z" fill="rgba(240,228,204,0.1)" stroke="#c4702a" strokeWidth="1" opacity="0.4"/>
