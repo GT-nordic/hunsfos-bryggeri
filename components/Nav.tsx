@@ -17,11 +17,7 @@ export default function Nav() {
     <nav id="mainNav" ref={navRef}>
       <a href="#" className="nav-logo">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/logo.png"
-          alt="Hunsfos Bryggeri & Destilleri"
-          style={{ height: '52px', width: 'auto' }}
-        />
+        <img src="/images/logo.png" alt="Hunsfos Bryggeri" style={{ height: '52px', width: 'auto', filter: 'invert(1)' }} />
       </a>
 
       <ul className="nav-links">
@@ -33,7 +29,7 @@ export default function Nav() {
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
 
-      <a href="https://hunsfos-bryggeri.no/olsmaking" className="nav-cta hidden md:block">
+      <a href="mailto:post@hunsfos-bryggeri.no" className="nav-cta hidden md:block">
         Book smaking
       </a>
     </nav>

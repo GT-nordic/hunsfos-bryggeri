@@ -43,7 +43,7 @@ export default function Location() {
         </div>
 
         <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href="https://hunsfos-bryggeri.no/kontakt-oss" className="btn-primary">
+          <a href="mailto:post@hunsfos-bryggeri.no" className="btn-primary">
             Kontakt oss
           </a>
         </div>

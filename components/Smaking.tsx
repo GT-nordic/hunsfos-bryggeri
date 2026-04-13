@@ -27,7 +27,7 @@ export default function Smaking() {
           <div className="detail-row">Valgfritt tillegg: Nordic River destillater</div>
           <div className="detail-row">Passer for grupper fra 6–40 personer</div>
         </div>
-        <a href="https://hunsfos-bryggeri.no/olsmaking" className="btn-primary reveal reveal-delay-4">
+        <a href="mailto:post@hunsfos-bryggeri.no" className="btn-primary reveal reveal-delay-4">
           Book din smaking
         </a>
       </div>

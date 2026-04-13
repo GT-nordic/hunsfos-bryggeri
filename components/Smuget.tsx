@@ -69,7 +69,7 @@ export default function Smuget() {
             ))}
           </div>
 
-          <a href="https://hunsfos-bryggeri.no/kontakt-oss" className="btn-primary reveal reveal-delay-4">
+          <a href="mailto:post@hunsfos-bryggeri.no" className="btn-primary reveal reveal-delay-4">
             Forespør reservasjon
           </a>
         </div>
