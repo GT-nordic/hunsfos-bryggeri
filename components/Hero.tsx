@@ -16,15 +16,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '6rem 4rem 4rem', overflow: 'hidden' }}>
-      {/* Video background */}
-      <iframe
-        src="https://drive.google.com/file/d/122fVMfcYpt8n80fZ1CngYnheW2NnLWog/preview"
-        allow="autoplay"
-        style={{ position: 'absolute', top: '50%', left: '50%', width: '177.78vh', height: '100vh', minWidth: '100%', minHeight: '56.25vw', transform: 'translate(-50%,-50%)', pointerEvents: 'none', border: 'none', zIndex: 0 }}
-      />
+    <section className="hero" id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '6rem 4rem 4rem', overflow: 'hidden', backgroundImage: "url('/images/brewery-dusk.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Dark overlay */}
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(15,10,7,0.85) 0%, rgba(15,10,7,0.4) 100%)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(15,10,7,0.88) 0%, rgba(15,10,7,0.5) 60%, rgba(15,10,7,0.3) 100%)', zIndex: 1 }} />
 
       <div className="hero-bg" style={{ zIndex: 1 }} />
       <div className="hero-grid" style={{ zIndex: 1 }} />
