@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="footer-col-title">Utforsk</div>
           <ul>
             <li><a href="https://hunsfos-bryggeri.no/produkter">Produkter</a></li>
-            <li><a href="https://hunsfos-bryggeri.no/brennevin">Nordic River</a></li>
+            <li><a href="https://nordic-river.com" target="_blank" rel="noopener noreferrer">Nordic River</a></li>
             <li><a href="https://hunsfos-bryggeri.no/utsalg">Utsalg</a></li>
           </ul>
         </div>
