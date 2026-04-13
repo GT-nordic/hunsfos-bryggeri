@@ -1,4 +1,6 @@
-const events = [
+import { getHunsfosEvents, formatEventDate } from '@/lib/checkin';
+
+const eventTypes = [
   {
     month: 'Løpende · Hele året',
     name: 'Mat og Prat',
@@ -19,7 +21,9 @@ const events = [
   },
 ];
 
-export default function Eventer() {
+export default async function Eventer() {
+  const events = await getHunsfosEvents();
+
   return (
     <section className="eventer-section" id="eventer">
       <p className="section-label reveal">Hva skjer</p>
@@ -28,7 +32,7 @@ export default function Eventer() {
       </h2>
 
       <div className="events-grid">
-        {events.map((e) => (
+        {eventTypes.map((e) => (
           <div key={e.name} className={`event-card reveal${e.delay}`}>
             <div className="event-month">{e.month}</div>
             <div className="event-name">{e.name}</div>
@@ -37,11 +41,36 @@ export default function Eventer() {
         ))}
       </div>
 
-      <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <a href="https://hunsfos-bryggeri.no/eventer" className="btn-ghost reveal">
-          Se alle eventer →
-        </a>
-      </div>
+      {events.length > 0 && (
+        <div className="live-events reveal" style={{ marginTop: '4rem' }}>
+          <p className="section-label" style={{ marginBottom: '2rem' }}>Kommende eventer</p>
+          <div className="live-events-grid">
+            {events.map((event, i) => {
+              const { day, month, time } = formatEventDate(event.start);
+              const ticketUrl = `https://checkin.no${event.url}`;
+              return (
+                <div key={event.id} className={`live-event-card reveal${i === 1 ? ' reveal-delay-1' : i === 2 ? ' reveal-delay-2' : ''}`}>
+                  <div className="live-event-image">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={event.image} alt={event.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                    <div className="live-event-date-badge">
+                      <span className="live-event-day">{day}</span>
+                      <span className="live-event-month">{month}</span>
+                    </div>
+                  </div>
+                  <div className="live-event-body">
+                    <div className="live-event-meta">{time} · {event.geo_description}</div>
+                    <div className="live-event-name">{event.name}</div>
+                    <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-primary live-event-btn">
+                      Kjøp billett
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
