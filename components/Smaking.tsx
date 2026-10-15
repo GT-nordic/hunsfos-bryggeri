@@ -25,7 +25,7 @@ export default function Smaking() {
           <div className="detail-row">Guidet gjennomgang av bryggeriprosessen</div>
           <div className="detail-row">Smaking av 4–6 utvalgte ølsorter</div>
           <div className="detail-row">Valgfritt tillegg: Nordic River destillater</div>
-          <div className="detail-row">Passer for grupper fra 6–40 personer</div>
+          <div className="detail-row">Passer for grupper fra 12–30 personer</div>
         </div>
         <a href="mailto:post@hunsfos-bryggeri.no" className="btn-primary reveal reveal-delay-4">
           Book din smaking
