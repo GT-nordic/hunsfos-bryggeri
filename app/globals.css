@@ -1125,3 +1125,102 @@ footer {
   .smuget-inner { grid-template-columns: 1fr; }
   .smuget-section { padding: 5rem 1.5rem; }
 }
+
+/* ── DIREKTØRENS JUL ── */
+.jul-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 4rem;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 75% 50%, #1b1a22 0%, #0d0c10 70%);
+  border-top: 1px solid rgba(240, 228, 204, 0.12);
+  border-bottom: 1px solid rgba(240, 228, 204, 0.12);
+}
+
+.jul-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 28% 70%, #fff, transparent),
+    radial-gradient(2px 2px at 45% 35%, #f0e4cc, transparent),
+    radial-gradient(1px 1px at 62% 82%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 78% 15%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 60%, #f0e4cc, transparent),
+    radial-gradient(1px 1px at 55% 10%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 8% 85%, #fff, transparent);
+  opacity: 0.7;
+  animation: jul-twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes jul-twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 0.85; }
+}
+
+.jul-text { position: relative; z-index: 1; max-width: 38rem; }
+
+.jul-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1rem;
+}
+
+.jul-title {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.jul-title em { font-style: italic; color: var(--amber); }
+
+.jul-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.jul-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-bottom: 2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.jul-facts span { color: var(--copper); margin-right: 0.35rem; }
+
+.jul-bottle {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.jul-bottle img {
+  max-height: 560px;
+  width: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+}
+
+@media (max-width: 900px) {
+  .jul-banner { grid-template-columns: 1fr; padding: 4rem 1.5rem; text-align: left; }
+  .jul-bottle { order: -1; }
+  .jul-bottle img { max-height: 380px; }
+}

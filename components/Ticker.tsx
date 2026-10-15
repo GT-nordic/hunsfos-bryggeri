@@ -1,6 +1,6 @@
 const items = [
   'IPA', 'PORTER', 'PALE ALE', 'HVETEØL',
-  'LAGER', 'SESONGSØL', 'ØLSMAKING', 'MAT OG PRAT',
+  'LAGER', 'DIREKTØRENS JUL', 'SESONGSØL', 'ØLSMAKING', 'MAT OG PRAT',
   'HÅNDBRYGGET', 'VENNESLA', 'HUNSFOS',
 ];
 

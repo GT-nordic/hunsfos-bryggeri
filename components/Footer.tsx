@@ -23,6 +23,7 @@ export default function Footer() {
             <li><a href="#produkter">MoIPA</a></li>
             <li><a href="#produkter">PM4</a></li>
             <li><a href="#produkter">Fatøl</a></li>
+            <li><a href="#jul">Direktørens Jul</a></li>
             <li><a href="#produkter">Direktørens Porter</a></li>
             <li><a href="#produkter">Direktørens Presisjons IPA</a></li>
           </ul>

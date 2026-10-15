@@ -1,5 +1,13 @@
 const products = [
   {
+    id: 'direktjul',
+    abv: '9.3% ABV',
+    style: 'Juleøl · Sterk',
+    name: 'Direktørens Jul',
+    desc: 'Kraftig, smaksrik juleøl med aromatiske humler',
+    img: '/images/direktorens-jul.png',
+  },
+  {
     id: 'liverbirds',
     abv: '4.6% ABV',
     style: 'Lager',

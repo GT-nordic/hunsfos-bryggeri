@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Ticker from '@/components/Ticker';
+import JulBanner from '@/components/JulBanner';
 import NordicRiverBanner from '@/components/NordicRiverBanner';
 import About from '@/components/About';
 import Produkter from '@/components/Produkter';
@@ -17,6 +18,7 @@ export default function Home() {
       <ScrollReveal />
       <Nav />
       <Hero />
+      <JulBanner />
       <Ticker />
       <NordicRiverBanner />
       <About />
