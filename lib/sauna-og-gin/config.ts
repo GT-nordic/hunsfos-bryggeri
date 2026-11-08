@@ -16,8 +16,10 @@ export const SAUNA_GIN = {
   /** Antall Nordic River-gin som smakes */
   antallGin: 3,
 
-  /** Mottaker av forespørsler fra skjemaet */
+  /** Kontaktadresse som vises på siden og i feilmeldinger */
   epostMottaker: 'post@hunsfos-bryggeri.no',
+  /** Hvor forespørsler fra skjemaet sendes (må være aktivert i FormSubmit) */
+  skjemaMottaker: 'gt@hunsfos-bryggeri.no',
 
   sti: '/opplevelser/sauna-og-gin',
 

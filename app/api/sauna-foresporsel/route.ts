@@ -4,11 +4,11 @@ import { lesForesporsel, validerForesporsel, type Foresporsel } from '@/lib/saun
 
 /**
  * Tar imot forespørsler fra skjemaet på /opplevelser/sauna-og-gin og sender dem
- * som e-post til post@hunsfos-bryggeri.no.
+ * som e-post til SAUNA_GIN.skjemaMottaker (se lib/sauna-og-gin/config.ts).
  *
  * Standard: FormSubmit (https://formsubmit.co), samme som bestilling.nordic-river.com.
  * Ingen nøkler trengs, men mottakeradressen må aktiveres én gang via lenken
- * FormSubmit sender til post@hunsfos-bryggeri.no ved første innsending.
+ * FormSubmit sender til mottakeradressen ved første innsending.
  *
  * Valgfritt: settes RESEND_API_KEY og FORESPORSEL_FRA i Vercel, brukes Resend i stedet.
  */
@@ -67,7 +67,7 @@ async function sendViaFormSubmit(f: Foresporsel, subject: string, rader: [string
   };
   for (const [k, v] of rader) felter[k] = v;
 
-  const res = await fetch(`https://formsubmit.co/ajax/${SAUNA_GIN.epostMottaker}`, {
+  const res = await fetch(`https://formsubmit.co/ajax/${SAUNA_GIN.skjemaMottaker}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ async function sendViaResend(f: Foresporsel, apiKey: string, fra: string, subjec
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: fra, to: [SAUNA_GIN.epostMottaker], reply_to: f.epost, subject, text, html }),
+    body: JSON.stringify({ from: fra, to: [SAUNA_GIN.skjemaMottaker], reply_to: f.epost, subject, text, html }),
   });
   if (res.ok) return null;
   return `Resend ${res.status}: ${await res.text().catch(() => '')}`;
