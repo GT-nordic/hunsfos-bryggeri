@@ -76,6 +76,20 @@ export default function ForesporselSkjema() {
         body: JSON.stringify({ ...f, nettside: honning }),
       });
       const svar = await res.json().catch(() => ({}));
+      if (res.ok && svar.ok && svar.formsubmit) {
+        // Serveren har validert; selve e-posten sendes herfra via FormSubmit.
+        const fs = await fetch(svar.formsubmit.url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(svar.formsubmit.felter),
+        });
+        const fsSvar = await fs.json().catch(() => ({}));
+        if (!fs.ok || String(fsSvar.success) !== 'true') {
+          setServerMelding(`Vi fikk ikke sendt forespørselen. Prøv igjen, eller send en e-post til ${SAUNA_GIN.epostMottaker}.`);
+          setStatus('feil');
+          return;
+        }
+      }
       if (res.ok && svar.ok) {
         setStatus('sendt');
         requestAnimationFrame(() => kvitteringRef.current?.focus());

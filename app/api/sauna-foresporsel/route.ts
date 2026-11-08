@@ -7,10 +7,11 @@ import { lesForesporsel, validerForesporsel, type Foresporsel } from '@/lib/saun
  * som e-post til SAUNA_GIN.skjemaMottaker (se lib/sauna-og-gin/config.ts).
  *
  * Standard: FormSubmit (https://formsubmit.co), samme som bestilling.nordic-river.com.
- * Ingen nøkler trengs, men mottakeradressen må aktiveres én gang via lenken
- * FormSubmit sender til mottakeradressen ved første innsending.
+ * FormSubmit avviser kall fra Vercels servere, så denne ruten validerer forespørselen
+ * og returnerer ferdig e-postinnhold, som nettleseren deretter sender til FormSubmit.
+ * Mottakeradressen må være aktivert i FormSubmit for hunsfos-bryggeri.no.
  *
- * Valgfritt: settes RESEND_API_KEY og FORESPORSEL_FRA i Vercel, brukes Resend i stedet.
+ * Valgfritt: settes RESEND_API_KEY og FORESPORSEL_FRA i Vercel, sender serveren selv via Resend.
  */
 
 export const dynamic = 'force-dynamic';
@@ -56,9 +57,7 @@ function lagEpost(f: Foresporsel) {
   return { subject, text, html, rader };
 }
 
-const NETTSTED = 'https://hunsfos-bryggeri.no';
-
-async function sendViaFormSubmit(f: Foresporsel, subject: string, rader: [string, string][]): Promise<string | null> {
+function formSubmitData(f: Foresporsel, subject: string, rader: [string, string][]) {
   const felter: Record<string, string> = {
     _subject: subject,
     _template: 'table',
@@ -66,20 +65,7 @@ async function sendViaFormSubmit(f: Foresporsel, subject: string, rader: [string
     _replyto: f.epost,
   };
   for (const [k, v] of rader) felter[k] = v;
-
-  const res = await fetch(`https://formsubmit.co/ajax/${SAUNA_GIN.skjemaMottaker}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Origin: NETTSTED,
-      Referer: `${NETTSTED}${SAUNA_GIN.sti}`,
-    },
-    body: JSON.stringify(felter),
-  });
-  const data = (await res.json().catch(() => ({}))) as { success?: unknown; message?: string };
-  if (res.ok && String(data.success) === 'true') return null;
-  return `FormSubmit ${res.status}: ${data.message ?? 'ukjent svar'}`;
+  return { url: `https://formsubmit.co/ajax/${SAUNA_GIN.skjemaMottaker}`, felter };
 }
 
 async function sendViaResend(f: Foresporsel, apiKey: string, fra: string, subject: string, text: string, html: string): Promise<string | null> {
@@ -115,17 +101,20 @@ export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   const fra = process.env.FORESPORSEL_FRA;
 
-  // Lokalt sendes ingen e-post med mindre SEND_EPOST_LOKALT=1
-  if (process.env.NODE_ENV !== 'production' && process.env.SEND_EPOST_LOKALT !== '1') {
+  // Lokalt sendes ingen e-post
+  if (process.env.NODE_ENV !== 'production') {
     console.log('[sauna-foresporsel] Lokal test – e-post IKKE sendt.\n', subject, '\n', text);
     return NextResponse.json({ ok: true, test: true });
   }
 
+  // Uten Resend: nettleseren sender til FormSubmit med innholdet vi har validert her.
+  if (!apiKey || !fra) {
+    return NextResponse.json({ ok: true, formsubmit: formSubmitData(f, subject, rader) });
+  }
+
   let sendefeil: string | null;
   try {
-    sendefeil = apiKey && fra
-      ? await sendViaResend(f, apiKey, fra, subject, text, html)
-      : await sendViaFormSubmit(f, subject, rader);
+    sendefeil = await sendViaResend(f, apiKey, fra, subject, text, html);
   } catch (e) {
     sendefeil = e instanceof Error ? e.message : String(e);
   }
