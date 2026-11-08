@@ -90,11 +90,7 @@ export default function SaunaOgGinPage() {
             <li>
               <span className="sg-kort-nr" aria-hidden="true">3</span>
               <h3>Ginsmaking</h3>
-              {/*
-                TODO: Legg inn navnene på de tre ginene som smakes, f.eks.
-                «Vi smaker No.X …, No.Y … og No.Z …» – eller som en liste under avsnittet.
-                (Vises ikke på siden før navnene er lagt inn.)
-              */}
+              {/* Hvilke tre gin som smakes velger vi selv, de oppgis ikke til kunden. */}
               <p>
                 Smaking av {tallSomOrd(antallGin)} Nordic River-gin. Gin serveres først her, etter badstue og bading.
               </p>

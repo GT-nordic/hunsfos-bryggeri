@@ -22,16 +22,15 @@ export const SAUNA_GIN = {
   sti: '/opplevelser/sauna-og-gin',
 
   /**
-   * Bilder. Nå laget fra «badstue .jpeg» (kun 388×515 px, oppskalert) –
-   * bytt til originalbildet i full oppløsning når det finnes.
-   * Bruk gjerne nye filnavn, ellers kan Next.js vise gamle bilder fra cache lokalt.
+   * Bilder: utsikt fra badstuen mot elva og Hunsfos (original 1080×1434 px).
+   * Bruk nye filnavn når bildene byttes, ellers kan Next.js vise gamle bilder fra cache.
    */
   bilder: {
-    hero: '/images/opplevelser/sauna-utsikt-hero.jpg', // 4:5
-    teaser: '/images/opplevelser/sauna-utsikt-teaser.jpg', // 4:3
-    og: '/images/opplevelser/sauna-utsikt-og.jpg', // delingsbilde, helst 1200×630
-    ogBredde: 800,
-    ogHoyde: 420,
+    hero: '/images/opplevelser/sauna-elva-hero.jpg', // 4:5
+    teaser: '/images/opplevelser/sauna-elva-teaser.jpg', // 4:3
+    og: '/images/opplevelser/sauna-elva-og.jpg', // delingsbilde 1200×630
+    ogBredde: 1200,
+    ogHoyde: 630,
   },
 } as const;
 
