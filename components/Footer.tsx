@@ -18,14 +18,14 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-col-title">Øl</div>
           <ul>
-            <li><a href="#produkter">Liverbirds</a></li>
-            <li><a href="#produkter">6 Times</a></li>
-            <li><a href="#produkter">MoIPA</a></li>
-            <li><a href="#produkter">PM4</a></li>
-            <li><a href="#produkter">Fatøl</a></li>
-            <li><a href="#jul">Direktørens Jul</a></li>
-            <li><a href="#produkter">Direktørens Porter</a></li>
-            <li><a href="#produkter">Direktørens Presisjons IPA</a></li>
+            <li><a href="/#produkter">Liverbirds</a></li>
+            <li><a href="/#produkter">6 Times</a></li>
+            <li><a href="/#produkter">MoIPA</a></li>
+            <li><a href="/#produkter">PM4</a></li>
+            <li><a href="/#produkter">Fatøl</a></li>
+            <li><a href="/#jul">Direktørens Jul</a></li>
+            <li><a href="/#produkter">Direktørens Porter</a></li>
+            <li><a href="/#produkter">Direktørens Presisjons IPA</a></li>
           </ul>
         </div>
 
@@ -45,8 +45,9 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-col-title">Opplev</div>
           <ul>
-            <li><a href="mailto:post@hunsfos-bryggeri.no">Ølsmaking</a></li>
-            <li><a href="#smuget">Smuget</a></li>
+            <li><a href="mailto:post@hunsfos-bryggeri.no">Øl- og brennevinssmaking</a></li>
+            <li><a href="/opplevelser/sauna-og-gin">Sauna og ginsmaking</a></li>
+            <li><a href="/#smuget">Smuget</a></li>
             <li><a href="https://hunsfos-bryggeri.no/eventer">Eventer</a></li>
             <li><a href="https://hunsfos-bryggeri.no/faq">FAQ</a></li>
           </ul>

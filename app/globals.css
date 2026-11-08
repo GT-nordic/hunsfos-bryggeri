@@ -1124,6 +1124,9 @@ footer {
   .smaking-text { padding: 4rem 2rem; }
   .smuget-inner { grid-template-columns: 1fr; }
   .smuget-section { padding: 5rem 1.5rem; }
+  .stat-row { flex-wrap: wrap; gap: 1.5rem 2rem; }
+  .hero-actions { flex-wrap: wrap; }
+  .produkter-header { flex-wrap: wrap; gap: 1.5rem; }
 }
 
 /* ── DIREKTØRENS JUL ── */
@@ -1223,4 +1226,612 @@ footer {
   .jul-banner { grid-template-columns: 1fr; padding: 4rem 1.5rem; text-align: left; }
   .jul-bottle { order: -1; }
   .jul-bottle img { max-height: 380px; }
+}
+
+/* ── SYNLIG FOKUS (tastatur) ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+/* ── SAUNA OG GIN: TEASER PÅ FORSIDEN ── */
+.sauna-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  background: var(--ink);
+  min-height: 60vh;
+}
+
+.sauna-teaser-bilde {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  background: var(--mid);
+}
+
+.sauna-teaser-bilde img { object-fit: cover; }
+
+.sauna-teaser-tekst {
+  padding: 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sauna-teaser-tekst h2 { margin-bottom: 1.5rem; }
+
+.sauna-teaser-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 480px;
+  margin-bottom: 1rem;
+}
+
+.sauna-teaser-pris {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .sauna-teaser { grid-template-columns: 1fr; }
+  .sauna-teaser-bilde { aspect-ratio: 4 / 3; min-height: 0; }
+  .sauna-teaser-tekst { padding: 3.5rem 1.25rem 4.5rem; }
+}
+
+/* ── SAUNA OG GIN: UNDERSIDE ── */
+.sg-side { overflow-x: hidden; }
+
+.sg-side h2 { margin-bottom: 1.5rem; }
+
+.sg-seksjon { padding: 6rem 4rem; }
+
+/* Hero */
+.sg-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 9rem 4rem 5rem;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196,112,42,0.12) 0%, transparent 70%),
+    linear-gradient(160deg, #0e0a07 0%, #1e160f 40%, #271b11 100%);
+}
+
+.sg-h1 {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.sg-h1 em { color: var(--copper); font-style: normal; }
+
+.sg-ingress {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text);
+  max-width: 34rem;
+  margin-bottom: 2.5rem;
+}
+
+.sg-knapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sg-hero-bilde {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid rgba(196,112,42,0.2);
+  background: var(--mid);
+}
+
+.sg-hero-bilde img { object-fit: cover; }
+
+/* Faktastripe */
+.sg-fakta {
+  padding: 0;
+  background: var(--copper);
+}
+
+.sg-fakta ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sg-fakta li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 2rem 2.5rem;
+  border-left: 1px solid rgba(21,16,12,0.2);
+}
+
+.sg-fakta li:first-child { border-left: 0; }
+
+.sg-fakta strong {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.sg-fakta span {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Slik blir kvelden */
+.sg-kvelden { background: var(--deep); }
+
+.sg-kort {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 3rem;
+  background: rgba(196,112,42,0.12);
+}
+
+.sg-kort li {
+  background: var(--dark);
+  padding: 2.5rem;
+}
+
+.sg-kort-nr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--copper);
+  border-radius: 50%;
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  color: var(--amber);
+  margin-bottom: 1.5rem;
+}
+
+.sg-kort h3 {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+}
+
+.sg-kort p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Pris */
+.sg-pris {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  background: var(--ink);
+}
+
+.sg-pris-tall {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  line-height: 1;
+  color: var(--amber);
+}
+
+.sg-pris-tall span {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.sg-liste {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.sg-liste li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--cream);
+}
+
+.sg-liste li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--copper);
+}
+
+/* Regler */
+.sg-regler-wrap { background: var(--ink); padding-top: 0; }
+
+.sg-regler {
+  max-width: 56rem;
+  border: 2px solid var(--amber);
+  background: rgba(232,184,74,0.07);
+  padding: 2.5rem;
+}
+
+.sg-regler h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--amber);
+}
+
+.sg-regler ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sg-regler li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--cream);
+}
+
+.sg-regler li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--amber);
+}
+
+.sg-regler strong { color: var(--amber); font-weight: 600; }
+
+/* Før du kommer */
+.sg-for { background: var(--deep); }
+.sg-for .sg-liste { max-width: 44rem; }
+
+.sg-merknad {
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  border-top: 1px solid rgba(196,112,42,0.2);
+  padding-top: 1.5rem;
+  max-width: 44rem;
+}
+
+/* Booking / skjema */
+.sg-booking { background: var(--dark); }
+
+.sg-booking-ingress {
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 40rem;
+  margin-bottom: 3rem;
+}
+
+.sg-skjema {
+  max-width: 52rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sg-skjema-info {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.sg-skjema fieldset { border: 0; min-width: 0; }
+
+.sg-rad { display: grid; gap: 1.25rem; }
+.sg-rad-2 { grid-template-columns: 1fr 1fr; }
+.sg-rad-3 { grid-template-columns: repeat(3, 1fr); }
+
+.sg-felt { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.sg-skjema label,
+.sg-skjema legend {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.sg-skjema legend { margin-bottom: 0.75rem; }
+
+.sg-skjema .sg-underlabel {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.sg-valgfritt { text-transform: none; letter-spacing: 0.02em; color: var(--text); }
+
+.sg-skjema input[type='text'],
+.sg-skjema input[type='email'],
+.sg-skjema input[type='tel'],
+.sg-skjema input[type='date'],
+.sg-skjema input[type='time'],
+.sg-skjema textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-lora), Lora, Georgia, serif;
+  font-size: 1rem;
+  color: var(--cream);
+  background: var(--ink);
+  border: 1px solid rgba(200,184,154,0.45);
+  border-radius: 0;
+  color-scheme: dark;
+}
+
+.sg-skjema textarea { resize: vertical; }
+
+.sg-skjema input:hover,
+.sg-skjema textarea:hover { border-color: var(--text); }
+
+.sg-skjema [aria-invalid='true'] { border-color: #ff8a73; }
+
+.sg-feil {
+  font-size: 0.88rem;
+  color: #ff9e8a;
+  margin-top: 0.2rem;
+}
+
+/* Valgknapper (radio som knapper) */
+.sg-valg { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.sg-skjema .sg-valgknapp { position: relative; cursor: pointer; }
+
+.sg-valgknapp input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.sg-valgknapp span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  min-height: 52px;
+  padding: 0 1.25rem;
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  border: 1px solid rgba(200,184,154,0.45);
+  background: var(--ink);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.sg-valgknapp-bred span {
+  min-width: 9rem;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.sg-valgknapp:hover span { border-color: var(--amber); }
+
+.sg-valgknapp input:checked + span {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: var(--ink);
+}
+
+.sg-valgknapp input:focus-visible + span {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.sg-pris-live {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(196,112,42,0.35);
+  background: var(--ink);
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+.sg-pris-live strong {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  color: var(--amber);
+}
+
+.sg-faktura {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 1px dashed rgba(200,184,154,0.35);
+}
+
+.sg-faktura legend { padding: 0 0.5rem; margin-bottom: 0; }
+
+.sg-skjult {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sg-avkrysninger { display: flex; flex-direction: column; gap: 1rem; }
+
+.sg-sjekk {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.sg-sjekk input {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.1rem;
+  accent-color: var(--copper);
+  cursor: pointer;
+}
+
+.sg-skjema .sg-sjekk label {
+  font-family: var(--font-lora), Lora, Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.55;
+  color: var(--cream);
+  cursor: pointer;
+}
+
+.sg-sjekk a { color: var(--amber); }
+
+.sg-serverfeil {
+  padding: 1rem 1.25rem;
+  border: 1px solid #ff8a73;
+  color: #ffc2b5;
+  line-height: 1.6;
+}
+
+.sg-send {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.sg-send .btn-primary {
+  border: 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 1.1rem 2.75rem;
+}
+
+.sg-send .btn-primary:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+.sg-send-info { font-size: 0.9rem; color: var(--text); }
+
+.sg-kvittering {
+  max-width: 44rem;
+  padding: 2rem;
+  border: 2px solid var(--copper);
+  background: var(--ink);
+  line-height: 1.7;
+  color: var(--cream);
+}
+
+.sg-kvittering-tittel {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+}
+
+/* Bunn */
+.sg-bunn {
+  padding: 3rem 4rem;
+  background: var(--ink);
+  border-top: 1px solid rgba(196,112,42,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.sg-bunn address { font-style: normal; }
+.sg-bunn a { color: var(--amber); }
+
+/* Mobil */
+@media (max-width: 900px) {
+  .sg-seksjon { padding: 4.5rem 1.25rem; }
+  .sg-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 7rem 1.25rem 3.5rem;
+  }
+  .sg-hero-bilde { aspect-ratio: 4 / 3; }
+  .sg-fakta ul { grid-template-columns: 1fr 1fr; }
+  .sg-fakta li { padding: 1.5rem 1.25rem; border-left: 0; }
+  .sg-fakta li:nth-child(even) { border-left: 1px solid rgba(21,16,12,0.2); }
+  .sg-fakta li:nth-child(n+3) { border-top: 1px solid rgba(21,16,12,0.2); }
+  .sg-kort { grid-template-columns: 1fr; }
+  .sg-kort li { padding: 2rem 1.5rem; }
+  .sg-pris { grid-template-columns: 1fr; gap: 2rem; }
+  .sg-regler-wrap { padding-top: 0; }
+  .sg-regler { padding: 1.75rem 1.25rem; }
+  .sg-rad-2, .sg-rad-3 { grid-template-columns: 1fr; }
+  .sg-bunn { padding: 2.5rem 1.25rem; }
+}
+
+@media (max-width: 380px) {
+  .sg-knapper a { width: 100%; text-align: center; }
+}
+
+/* Meny: plass til «Opplevelser» på mellomstore skjermer */
+.nav-links a { white-space: nowrap; }
+@media (min-width: 901px) and (max-width: 1200px) {
+  nav { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .nav-links { gap: 1.1rem; }
+  .nav-links a { letter-spacing: 0.1em; }
+  .nav-cta { padding: 0.6rem 1rem; letter-spacing: 0.14em; }
 }

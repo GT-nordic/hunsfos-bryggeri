@@ -29,7 +29,7 @@ export default function Location() {
 
         <div className="opening-hours">
           <div className="hour-row">
-            <span className="day">Ølsmaking / Arrangementer</span>
+            <span className="day">Øl- og brennevinssmaking / Arrangementer</span>
             <span>Etter booking</span>
           </div>
           <div className="hour-row">

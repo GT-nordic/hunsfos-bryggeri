@@ -6,6 +6,7 @@ import NordicRiverBanner from '@/components/NordicRiverBanner';
 import About from '@/components/About';
 import Produkter from '@/components/Produkter';
 import Smaking from '@/components/Smaking';
+import SaunaTeaser from '@/components/SaunaTeaser';
 import Eventer from '@/components/Eventer';
 import Smuget from '@/components/Smuget';
 import Location from '@/components/Location';
@@ -24,6 +25,7 @@ export default function Home() {
       <About />
       <Produkter />
       <Smaking />
+      <SaunaTeaser />
       <Eventer />
       <Smuget />
       <Location />

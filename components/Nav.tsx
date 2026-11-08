@@ -15,18 +15,19 @@ export default function Nav() {
 
   return (
     <nav id="mainNav" ref={navRef}>
-      <a href="#" className="nav-logo">
+      <a href="/" className="nav-logo">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/logo.png" alt="Hunsfos Bryggeri" style={{ height: '52px', width: 'auto', filter: 'invert(1)' }} />
       </a>
 
       <ul className="nav-links">
-        <li><a href="#om-oss">Om oss</a></li>
-        <li><a href="#produkter">Produkter</a></li>
-        <li><a href="#smaking">Ølsmaking</a></li>
-        <li><a href="#eventer">Eventer</a></li>
-        <li><a href="#smuget">Smuget</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="/#om-oss">Om oss</a></li>
+        <li><a href="/#produkter">Produkter</a></li>
+        <li><a href="/#smaking">Smakinger</a></li>
+        <li><a href="/opplevelser/sauna-og-gin">Opplevelser</a></li>
+        <li><a href="/#eventer">Eventer</a></li>
+        <li><a href="/#smuget">Smuget</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
       </ul>
 
       <a href="mailto:post@hunsfos-bryggeri.no" className="nav-cta hidden md:block">
