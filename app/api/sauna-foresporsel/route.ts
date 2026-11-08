@@ -4,12 +4,13 @@ import { lesForesporsel, validerForesporsel, type Foresporsel } from '@/lib/saun
 
 /**
  * Tar imot forespørsler fra skjemaet på /opplevelser/sauna-og-gin og sender dem
- * som e-post til post@hunsfos-bryggeri.no via Resend (https://resend.com).
+ * som e-post til post@hunsfos-bryggeri.no.
  *
- * Miljøvariabler (Vercel → Settings → Environment Variables):
- *   RESEND_API_KEY   – API-nøkkel fra Resend
- *   FORESPORSEL_FRA  – avsender på et verifisert domene, f.eks.
- *                      "Hunsfos Bryggeri <booking@hunsfos-bryggeri.no>"
+ * Standard: FormSubmit (https://formsubmit.co), samme som bestilling.nordic-river.com.
+ * Ingen nøkler trengs, men mottakeradressen må aktiveres én gang via lenken
+ * FormSubmit sender til post@hunsfos-bryggeri.no ved første innsending.
+ *
+ * Valgfritt: settes RESEND_API_KEY og FORESPORSEL_FRA i Vercel, brukes Resend i stedet.
  */
 
 export const dynamic = 'force-dynamic';
@@ -52,7 +53,43 @@ function lagEpost(f: Foresporsel) {
     .map(([k, v]) => `<tr><td style="padding:6px 16px 6px 0;vertical-align:top;color:#555"><strong>${esc(k)}</strong></td><td style="padding:6px 0;white-space:pre-wrap">${esc(v)}</td></tr>`)
     .join('')}</table>
 <p style="font-family:sans-serif;color:#555">Svar på denne e-posten for å svare kunden direkte.</p>`;
-  return { subject, text, html };
+  return { subject, text, html, rader };
+}
+
+const NETTSTED = 'https://hunsfos-bryggeri.no';
+
+async function sendViaFormSubmit(f: Foresporsel, subject: string, rader: [string, string][]): Promise<string | null> {
+  const felter: Record<string, string> = {
+    _subject: subject,
+    _template: 'table',
+    _captcha: 'false',
+    _replyto: f.epost,
+  };
+  for (const [k, v] of rader) felter[k] = v;
+
+  const res = await fetch(`https://formsubmit.co/ajax/${SAUNA_GIN.epostMottaker}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Origin: NETTSTED,
+      Referer: `${NETTSTED}${SAUNA_GIN.sti}`,
+    },
+    body: JSON.stringify(felter),
+  });
+  const data = (await res.json().catch(() => ({}))) as { success?: unknown; message?: string };
+  if (res.ok && String(data.success) === 'true') return null;
+  return `FormSubmit ${res.status}: ${data.message ?? 'ukjent svar'}`;
+}
+
+async function sendViaResend(f: Foresporsel, apiKey: string, fra: string, subject: string, text: string, html: string): Promise<string | null> {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ from: fra, to: [SAUNA_GIN.epostMottaker], reply_to: f.epost, subject, text, html }),
+  });
+  if (res.ok) return null;
+  return `Resend ${res.status}: ${await res.text().catch(() => '')}`;
 }
 
 export async function POST(req: Request) {
@@ -74,37 +111,27 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, feil, melding: 'Noen felter må rettes.' }, { status: 422 });
   }
 
-  const { subject, text, html } = lagEpost(f);
+  const { subject, text, html, rader } = lagEpost(f);
   const apiKey = process.env.RESEND_API_KEY;
   const fra = process.env.FORESPORSEL_FRA;
 
-  if (!apiKey || !fra) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('[sauna-foresporsel] RESEND_API_KEY/FORESPORSEL_FRA mangler – e-post IKKE sendt (kun lokal test).\n', subject, '\n', text);
-      return NextResponse.json({ ok: true, test: true });
-    }
-    console.error('[sauna-foresporsel] RESEND_API_KEY eller FORESPORSEL_FRA mangler');
-    return NextResponse.json(
-      { ok: false, melding: `Skjemaet virker ikke akkurat nå. Send oss en e-post på ${SAUNA_GIN.epostMottaker}.` },
-      { status: 503 },
-    );
+  // Lokalt sendes ingen e-post med mindre SEND_EPOST_LOKALT=1
+  if (process.env.NODE_ENV !== 'production' && process.env.SEND_EPOST_LOKALT !== '1') {
+    console.log('[sauna-foresporsel] Lokal test – e-post IKKE sendt.\n', subject, '\n', text);
+    return NextResponse.json({ ok: true, test: true });
   }
 
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      from: fra,
-      to: [SAUNA_GIN.epostMottaker],
-      reply_to: f.epost,
-      subject,
-      text,
-      html,
-    }),
-  });
+  let sendefeil: string | null;
+  try {
+    sendefeil = apiKey && fra
+      ? await sendViaResend(f, apiKey, fra, subject, text, html)
+      : await sendViaFormSubmit(f, subject, rader);
+  } catch (e) {
+    sendefeil = e instanceof Error ? e.message : String(e);
+  }
 
-  if (!res.ok) {
-    console.error('[sauna-foresporsel] Resend feilet', res.status, await res.text().catch(() => ''));
+  if (sendefeil) {
+    console.error('[sauna-foresporsel] Sending feilet:', sendefeil);
     return NextResponse.json(
       { ok: false, melding: `Vi fikk ikke sendt forespørselen. Prøv igjen, eller send en e-post til ${SAUNA_GIN.epostMottaker}.` },
       { status: 502 },
